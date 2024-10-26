@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda en Línea</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+        body {
+            font-family: 'Baloo 2', cursive;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-logo h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .navbar-search input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        .navbar-search button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #ff4500;
+            color: white;
+            cursor: pointer;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .camera-search-section {
+            margin: 20px;
+        }
+        .camera-search-section button {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4500;
+            color: white;
+            cursor: pointer;
+        }
+        .products-section {
+            width: 90%;
+            max-width: 1000px;
+            background-color: white;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .products-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 12px;
+        }
+        .product-card h3 {
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+        .product-card p {
+            color: #ff4500;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .product-card button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4500;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .product-card button:hover {
+            background-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <div class="navbar-logo">
+            <h1>Mi Tienda</h1>
+        </div>
+        <div class="navbar-search">
+            <input type="text" placeholder="Buscar productos...">
+            <button>Buscar</button>
+        </div>
+        <div class="navbar-links">
+            <a href="#">Iniciar Sesión</a>
+            <a href="#">Mis Pedidos</a>
+            <a href="#">Carrito</a>
+        </div>
+    </header>
+    <!-- Botón para buscar por cámara -->
+    <section class="camera-search-section">
+        <button onclick="activateCamera()">Buscar con la Cámara</button>
+        <video id="cameraStream" autoplay playsinline style="display: none;"></video>
+        <canvas id="snapshot" style="display: none;"></canvas>
+    </section>
+    <!-- Sección de productos -->
+    <section class="products-section">
+        <h2>Productos Destacados</h2>
+        <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <img src="camisa_roja.jpg" alt="Producto 1">
+                <h3>Camisa Roja</h3>
+                <p>$499.99</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <img src="pantalonNegro.webp" alt="Producto 2">
+                <h3>Pantalón Negro</h3>
+                <p>$699.99</p>
+                <button>Agregar al Carrito</button>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
